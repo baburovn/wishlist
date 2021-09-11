@@ -17,8 +17,14 @@ from django.contrib import admin
 from django.urls import path
 
 from main.views import index
+from main.views import about_us
+from main.views import list_page
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="index_page")
+    path('', index, name="index_page"),
+    path('about/', about_us, name="about_us"),
+    path('wisher/<int:pk>', list_page, name="wish_list")
 ]
